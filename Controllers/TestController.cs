@@ -8,7 +8,7 @@ namespace library_backend.Controllers
     public class TestController : ControllerBase
     {
         /// <summary>
-        /// get测试
+        /// 测试
         /// </summary>
         /// <returns></returns>
         [HttpGet]
