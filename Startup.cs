@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using library_backend.Services;
 
 namespace library_backend
 {
@@ -47,6 +48,8 @@ namespace library_backend
                 var xmlPath = Path.Combine(baseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
+
+            services.AddSingleton<IBookService, BookService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
