@@ -1,15 +1,16 @@
 using library_backend.Entities;
 using library_backend.Results;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace library_backend.Services
 {
     public interface IBookService
     {
-        public ResultBase addBook(book b);
-        public ResultBase deleteBook(book b);
-        public ResultBase updateBook(book b);
-        public ResultBase searchBook(string name);
-        public book getBook(string id);
+        public Task<ResultBase> addBookAsync(book b);
+        public Task<ResultBase> deleteBookAsync(book b);
+        public Task<ResultBase> updateBookAsync(book b);
+        public Task<BookSearchResult> searchBookAsync(string name);
 
     }
 }

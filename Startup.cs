@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using library_backend.Services;
+using library_backend.DataBase;
 
 namespace library_backend
 {
@@ -49,6 +50,7 @@ namespace library_backend
                 c.IncludeXmlComments(xmlPath);
             });
 
+            services.AddSingleton<DbContext>();
             services.AddSingleton<IBookService, BookService>();
         }
 

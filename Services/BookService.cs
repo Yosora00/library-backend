@@ -1,34 +1,56 @@
 using System;
 using library_backend.Entities;
 using library_backend.Results;
+using library_backend.DataBase;
+using library_backend.CommonActions;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace library_backend.Services
 {
     public class BookService : IBookService
     {
-        public ResultBase addBook(book b)
+        private DbContext ctx;
+        public BookService(DbContext context)
         {
-            throw new NotImplementedException();
+            this.ctx = context;
+        }
+        public async Task<ResultBase> addBookAsync(book b)
+        {
+            return await TryCatchAction<ResultBase>.excuteAsync(async () =>
+            {
+                await this.ctx.Db.Insertable<book>(b).ExecuteCommandAsync();
+            });
         }
 
-        public ResultBase deleteBook(book b)
+        public async Task<ResultBase> deleteBookAsync(book b)
         {
-            throw new NotImplementedException();
+            return await TryCatchAction<ResultBase>.excuteAsync(async () =>
+            {
+                await this.ctx.Db.Deleteable<book>().In<string>(b.id).ExecuteCommandAsync();
+            });
         }
 
-        public book getBook(string id)
+        public async Task<ResultBase> updateBookAsync(book b)
         {
-            throw new NotImplementedException();
+            return await TryCatchAction<ResultBase>.excuteAsync(async () =>
+            {
+                await this.ctx.Db.Updateable<book>(b).ExecuteCommandAsync();
+            });
         }
 
-        public ResultBase searchBook(string name)
+        public async Task<BookSearchResult> searchBookAsync(string name)
         {
-            throw new NotImplementedException();
+            var books = new List<book>();
+            var res = await TryCatchAction<BookSearchResult>.excuteAsync(async () =>
+            {
+                books = await this.ctx.Db.Queryable<book>()
+                                        .Where(b => b.name.Contains(name))
+                                        .ToListAsync();
+            }) as BookSearchResult;
+            res.books = books;
+            return res;
         }
 
-        public ResultBase updateBook(book b)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
