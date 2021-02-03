@@ -6,7 +6,7 @@ namespace library_backend.CommonActions
 {
     public static class TryCatchAction<T> where T : ResultBase, new()
     {
-        public static T excute(
+        public static T Excute(
             Action act,
             Action<Exception> err = null,
             Action final = null)
@@ -36,7 +36,7 @@ namespace library_backend.CommonActions
             return r;
         }
 
-        public static async Task<T> excuteAsync(
+        public static async Task<T> ExcuteAsync(
             Func<Task> act,
             Func<Exception, Task> err = null,
             Func<Task> final = null

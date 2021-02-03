@@ -15,34 +15,34 @@ namespace library_backend.Services
         {
             this.ctx = context;
         }
-        public async Task<ResultBase> addBookAsync(book b)
+        public async Task<ResultBase> AddBookAsync(book b)
         {
-            return await TryCatchAction<ResultBase>.excuteAsync(async () =>
+            return await TryCatchAction<ResultBase>.ExcuteAsync(async () =>
             {
                 await this.ctx.Db.Insertable<book>(b).ExecuteCommandAsync();
             });
         }
 
-        public async Task<ResultBase> deleteBookAsync(book b)
+        public async Task<ResultBase> DeleteBookAsync(book b)
         {
-            return await TryCatchAction<ResultBase>.excuteAsync(async () =>
+            return await TryCatchAction<ResultBase>.ExcuteAsync(async () =>
             {
                 await this.ctx.Db.Deleteable<book>().In<string>(b.id).ExecuteCommandAsync();
             });
         }
 
-        public async Task<ResultBase> updateBookAsync(book b)
+        public async Task<ResultBase> UpdateBookAsync(book b)
         {
-            return await TryCatchAction<ResultBase>.excuteAsync(async () =>
+            return await TryCatchAction<ResultBase>.ExcuteAsync(async () =>
             {
                 await this.ctx.Db.Updateable<book>(b).ExecuteCommandAsync();
             });
         }
 
-        public async Task<BookSearchResult> searchBookAsync(string name)
+        public async Task<BookSearchResult> SearchBookAsync(string name)
         {
             List<book> books = null;
-            var res = await TryCatchAction<BookSearchResult>.excuteAsync(async () =>
+            var res = await TryCatchAction<BookSearchResult>.ExcuteAsync(async () =>
             {
                 books = await this.ctx.Db.Queryable<book>()
                                         .Where(b => b.name.Contains(name))

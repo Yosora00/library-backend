@@ -23,7 +23,7 @@ namespace library_backend.Controllers
         [HttpPost]
         public async Task<ResultBase> Test(string name)
         {
-            return await _bookservice.searchBookAsync(name);
+            return await _bookservice.SearchBookAsync(name);
         }
     }
 }
