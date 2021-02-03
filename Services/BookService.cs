@@ -5,15 +5,21 @@ using library_backend.DataBase;
 using library_backend.CommonActions;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using library_backend.utils;
 
 namespace library_backend.Services
 {
     public class BookService : IBookService
     {
         private DbContext ctx;
-        public BookService(DbContext context)
+        private ILabelService _labelservice;
+        public BookService(
+            DbContext context,
+            ILabelService labelservice
+            )
         {
             this.ctx = context;
+            this._labelservice = labelservice;
         }
         public async Task<ResultBase> AddBookAsync(book b)
         {
@@ -52,5 +58,81 @@ namespace library_backend.Services
             return res;
         }
 
+        public async Task<BookLabelAddResult> AddBookLabelsAsync(book b, List<label> labels)
+        {
+            var bkares = new BookLabelAddResult()
+            {
+                isSuccess = false,
+                errorlist = new List<string>()
+            };
+
+            //检查书是否存在
+            var bk = await this.ctx.Db.Queryable<book>().Where(e => e.id == b.id).ToListAsync();
+            if (bk.Count == 0)
+            {
+                return bkares;
+            }
+
+            foreach (var l in labels)
+            {
+                var id = await this._labelservice.GetLabelIdAsync(l.name);
+                while (id == null)
+                {
+                    id = MyUtils.generateId();
+                    l.id = id;
+                    var res = await _labelservice.AddLabelAsync(l);
+                    if (!res.isSuccess) //id重复
+                        id = null;
+                }
+                if (id != null)
+                {
+                    var bl = new booklabel
+                    {
+                        id = MyUtils.generateId(),
+                        bookId = b.id,
+                        labelId = id
+                    };
+                    var res = await TryCatchAction<ResultBase>.ExcuteAsync(async () =>
+                    {
+                        await this.ctx.Db.Insertable<booklabel>(bl).ExecuteCommandAsync();
+                    });
+                    if (!res.isSuccess)
+                        bkares.errorlist.Add(l.name);
+                }
+            }
+            if (bkares.errorlist.Count == 0)
+                bkares.isSuccess = true;
+            return bkares;
+        }
+
+        public async Task<BookLabelAddResult> DeleteBookLabelsAsync(book b, List<label> labels)
+        {
+            var bkares = new BookLabelAddResult()
+            {
+                isSuccess = false,
+                errorlist = new List<string>()
+            };
+
+            //检查书是否存在
+            var bk = await this.ctx.Db.Queryable<book>().Where(e => e.id == b.id).ToListAsync();
+            if (bk.Count == 0)
+            {
+                return bkares;
+            }
+
+            foreach (var l in labels)
+            {
+                var res = await TryCatchAction<ResultBase>.ExcuteAsync(async () =>
+                {
+                    await this.ctx.Db.Deleteable<booklabel>().Where(bl => bl.bookId == b.id && bl.labelId == l.id).ExecuteCommandAsync();
+                });
+                if (!res.isSuccess)
+                    bkares.errorlist.Add(l.name);
+            }
+
+            if (bkares.errorlist.Count == 0)
+                bkares.isSuccess = true;
+            return bkares;
+        }
     }
 }

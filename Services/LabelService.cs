@@ -3,6 +3,7 @@ using library_backend.Entities;
 using library_backend.Results;
 using library_backend.CommonActions;
 using library_backend.DataBase;
+using library_backend.utils;
 
 namespace library_backend.Services
 {
@@ -35,6 +36,14 @@ namespace library_backend.Services
             {
                 await this.ctx.Db.Updateable<label>(l).ExecuteCommandAsync();
             });
+        }
+
+        public async Task<string> GetLabelIdAsync(string name)
+        {
+            var list = await this.ctx.Db.Queryable<label>().Where(l => l.name == name).ToListAsync();
+            if (list.Count >= 1)
+                return list[0].id;
+            return null;
         }
     }
 }
