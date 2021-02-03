@@ -1,0 +1,810 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "c:\\Users\\LZY\\Desktop\\Library\\library-backend",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2021-02-03 17:42:12",
+            "filesum": 121,
+            "codesum": 41100,
+            "commentsum": 37,
+            "blanksum": 226,
+            "filelist": [
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": ".editorconfig"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "appsettings.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "bin\\Debug\\net5.0\\appsettings.json"
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\BouncyCastle.Crypto.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\DmProvider.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Google.Protobuf.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\K4os.Compression.LZ4.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\K4os.Compression.LZ4.Streams.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\K4os.Hash.xxHash.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Kdbndp.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 5950,
+                    "comment": 0,
+                    "filename": "bin\\Debug\\net5.0\\library-backend.deps.json"
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\library-backend.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\library-backend.exe",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\library-backend.pdb",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "bin\\Debug\\net5.0\\library-backend.runtimeconfig.dev.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "bin\\Debug\\net5.0\\library-backend.runtimeconfig.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "bin\\Debug\\net5.0\\library-backend.xml"
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Microsoft.Data.Sqlite.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Microsoft.IdentityModel.JsonWebTokens.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Microsoft.IdentityModel.Logging.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Microsoft.IdentityModel.Protocols.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Microsoft.IdentityModel.Tokens.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Microsoft.OpenApi.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\MySql.Data.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Newtonsoft.Json.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Npgsql.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Oracle.ManagedDataAccess.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\ref\\library-backend.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Renci.SshNet.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\alpine-x64\\native\\libe_sqlite3.so",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\linux-arm64\\native\\libe_sqlite3.so",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\linux-arm\\native\\libe_sqlite3.so",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\linux-armel\\native\\libe_sqlite3.so",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\linux-musl-x64\\native\\libe_sqlite3.so",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\linux-x64\\native\\libe_sqlite3.so",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\linux-x86\\native\\libe_sqlite3.so",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\osx-x64\\native\\libe_sqlite3.dylib",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\unix\\lib\\netstandard2.0\\System.Data.SqlClient.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\win-arm64\\native\\sni.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\win-x64\\native\\e_sqlite3.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\win-x64\\native\\sni.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\win-x86\\native\\e_sqlite3.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\win-x86\\native\\sni.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\win8-arm\\native\\e_sqlite3.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\win\\lib\\netstandard2.0\\System.Data.SqlClient.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\runtimes\\win\\lib\\netstandard2.0\\System.Security.Cryptography.ProtectedData.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\SQLitePCLRaw.batteries_green.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\SQLitePCLRaw.batteries_v2.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\SQLitePCLRaw.core.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\SQLitePCLRaw.provider.e_sqlite3.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\SqlSugar.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\SshNet.Security.Cryptography.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Swashbuckle.AspNetCore.Swagger.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Swashbuckle.AspNetCore.SwaggerGen.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Swashbuckle.AspNetCore.SwaggerUI.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\System.Configuration.ConfigurationManager.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\System.Data.SqlClient.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\System.IdentityModel.Tokens.Jwt.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\System.Security.Cryptography.ProtectedData.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\System.Xml.XPath.XmlDocument.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Ubiety.Dns.Core.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "bin\\Debug\\net5.0\\Zstandard.Net.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "c:\\Users\\LZY\\Desktop\\Library\\library-frontend\\.browserslistrc"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "c:\\Users\\LZY\\Desktop\\Library\\library-frontend\\.editorconfig"
+                },
+                {
+                    "blank": 4,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "c:\\Users\\LZY\\Desktop\\Library\\library-frontend\\.gitignore"
+                },
+                {
+                    "blank": 1,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "c:\\Users\\LZY\\Desktop\\Library\\library-frontend\\babel.config.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 11117,
+                    "comment": 0,
+                    "filename": "c:\\Users\\LZY\\Desktop\\Library\\library-frontend\\package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "c:\\Users\\LZY\\Desktop\\Library\\library-frontend\\package.json"
+                },
+                {
+                    "filename": "c:\\Users\\LZY\\Desktop\\Library\\library-frontend\\public\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 16,
+                    "comment": 1,
+                    "filename": "c:\\Users\\LZY\\Desktop\\Library\\library-frontend\\public\\index.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 15,
+                    "comment": 1,
+                    "filename": "c:\\Users\\LZY\\Desktop\\Library\\library-frontend\\README.md"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "c:\\Users\\LZY\\Desktop\\Library\\library-frontend\\src\\App.vue"
+                },
+                {
+                    "filename": "c:\\Users\\LZY\\Desktop\\Library\\library-frontend\\src\\assets\\logo.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "c:\\Users\\LZY\\Desktop\\Library\\library-frontend\\src\\main.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "c:\\Users\\LZY\\Desktop\\Library\\library-frontend\\src\\router\\index.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "c:\\Users\\LZY\\Desktop\\Library\\library-frontend\\src\\store\\index.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 68,
+                    "comment": 0,
+                    "filename": "CommonActions\\TryCatchAction.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 24,
+                    "comment": 4,
+                    "filename": "Controllers\\TestController.cs"
+                },
+                {
+                    "filename": "data\\data.db",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 4,
+                    "code": 18,
+                    "comment": 10,
+                    "filename": "DataBase\\DbContext.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "Entities\\book.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "Entities\\booklabel.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "Entities\\label.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "library-backend.csproj"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 1,
+                    "filename": "obj\\Debug\\net5.0\\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs"
+                },
+                {
+                    "filename": "obj\\Debug\\net5.0\\apphost.exe",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 4,
+                    "code": 9,
+                    "comment": 10,
+                    "filename": "obj\\Debug\\net5.0\\library-backend.AssemblyInfo.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "obj\\Debug\\net5.0\\library-backend.AssemblyInfoInputs.cache"
+                },
+                {
+                    "filename": "obj\\Debug\\net5.0\\library-backend.assets.cache",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "obj\\Debug\\net5.0\\library-backend.csproj.CopyComplete"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "obj\\Debug\\net5.0\\library-backend.csproj.CoreCompileInputs.cache"
+                },
+                {
+                    "blank": 0,
+                    "code": 79,
+                    "comment": 0,
+                    "filename": "obj\\Debug\\net5.0\\library-backend.csproj.FileListAbsolute.txt"
+                },
+                {
+                    "filename": "obj\\Debug\\net5.0\\library-backend.csprojAssemblyReference.cache",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "obj\\Debug\\net5.0\\library-backend.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "obj\\Debug\\net5.0\\library-backend.GeneratedMSBuildEditorConfig.editorconfig"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "obj\\Debug\\net5.0\\library-backend.genruntimeconfig.cache"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "obj\\Debug\\net5.0\\library-backend.MvcApplicationPartsAssemblyInfo.cache"
+                },
+                {
+                    "blank": 4,
+                    "code": 3,
+                    "comment": 9,
+                    "filename": "obj\\Debug\\net5.0\\library-backend.MvcApplicationPartsAssemblyInfo.cs"
+                },
+                {
+                    "filename": "obj\\Debug\\net5.0\\library-backend.pdb",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "obj\\Debug\\net5.0\\library-backend.RazorTargetAssemblyInfo.cache"
+                },
+                {
+                    "blank": 0,
+                    "code": 15606,
+                    "comment": 0,
+                    "filename": "obj\\Debug\\net5.0\\project.razor.json"
+                },
+                {
+                    "filename": "obj\\Debug\\net5.0\\ref\\library-backend.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "obj\\Debug\\net5.0\\staticwebassets\\library-backend.StaticWebAssets.Manifest.cache"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "obj\\Debug\\net5.0\\staticwebassets\\library-backend.StaticWebAssets.xml"
+                },
+                {
+                    "blank": 6,
+                    "code": 83,
+                    "comment": 0,
+                    "filename": "obj\\library-backend.csproj.nuget.dgspec.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "obj\\library-backend.csproj.nuget.g.props"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "obj\\library-backend.csproj.nuget.g.targets"
+                },
+                {
+                    "blank": 154,
+                    "code": 7479,
+                    "comment": 0,
+                    "filename": "obj\\project.assets.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 150,
+                    "comment": 0,
+                    "filename": "obj\\project.nuget.cache"
+                },
+                {
+                    "blank": 2,
+                    "code": 24,
+                    "comment": 0,
+                    "filename": "Program.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "Properties\\launchSettings.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Results\\BookSearchResult.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Results\\ResultBase.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 51,
+                    "comment": 0,
+                    "filename": "Services\\BookService.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "Services\\IBookService.cs"
+                },
+                {
+                    "blank": 11,
+                    "code": 68,
+                    "comment": 1,
+                    "filename": "Startup.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "utils\\MyUtils.cs"
+                }
+            ]
+        }
+    ]
+}

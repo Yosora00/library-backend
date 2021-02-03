@@ -41,7 +41,7 @@ namespace library_backend.Services
 
         public async Task<BookSearchResult> searchBookAsync(string name)
         {
-            var books = new List<book>();
+            List<book> books = null;
             var res = await TryCatchAction<BookSearchResult>.excuteAsync(async () =>
             {
                 books = await this.ctx.Db.Queryable<book>()
