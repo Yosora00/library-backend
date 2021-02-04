@@ -32,13 +32,17 @@ namespace library_backend.Controllers
         }
 
         /// <summary>
-        /// 删除书，只需传 book.id
+        /// 删除书
         /// </summary>
-        /// <param name="b"></param>
+        /// <param name="bookid"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<ResultBase> Delete([FromForm] book b)
+        public async Task<ResultBase> Delete([FromForm] string bookid)
         {
+            var b = new book
+            {
+                id = bookid
+            };
             return await this._bookservice.DeleteBookAsync(b);
         }
 
