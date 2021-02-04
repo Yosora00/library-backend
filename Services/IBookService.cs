@@ -20,10 +20,10 @@ namespace library_backend.Services
         public Task<BookSearchResult> SearchBookAsync(string name);
 
         //给书添加标签，必须传 book.id、label.name
-        public Task<BookLabelAddResult> AddBookLabelsAsync(book b, List<label> labels);
+        public Task<BookLabelModifyResult> AddBookLabelsAsync(book b, List<label> labels);
 
         //书和标签取消关联，必须传 book.id、label.id
-        public Task<BookLabelAddResult> DeleteBookLabelsAsync(book b, List<label> labels);
+        public Task<BookLabelModifyResult> DeleteBookLabelsAsync(book b, List<label> labels);
 
     }
 }

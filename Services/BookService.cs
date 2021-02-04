@@ -58,9 +58,9 @@ namespace library_backend.Services
             return res;
         }
 
-        public async Task<BookLabelAddResult> AddBookLabelsAsync(book b, List<label> labels)
+        public async Task<BookLabelModifyResult> AddBookLabelsAsync(book b, List<label> labels)
         {
-            var bkares = new BookLabelAddResult()
+            var bkares = new BookLabelModifyResult()
             {
                 isSuccess = false,
                 errorlist = new List<string>()
@@ -76,14 +76,22 @@ namespace library_backend.Services
             foreach (var l in labels)
             {
                 var id = await this._labelservice.GetLabelIdAsync(l.name);
-                while (id == null)
+                if (id == null)
                 {
                     id = MyUtils.generateId();
                     l.id = id;
                     var res = await _labelservice.AddLabelAsync(l);
-                    if (!res.isSuccess) //id重复
-                        id = null;
                 }
+                else
+                {
+                    var bl = await this.ctx.Db.Queryable<booklabel>().Where(bl => bl.bookId == b.id && bl.labelId == id).ToListAsync();
+                    if (bl.Count > 0)
+                    {
+                        bkares.errorlist.Add(l.name);
+                        continue;
+                    }
+                }
+
                 if (id != null)
                 {
                     var bl = new booklabel
@@ -105,9 +113,9 @@ namespace library_backend.Services
             return bkares;
         }
 
-        public async Task<BookLabelAddResult> DeleteBookLabelsAsync(book b, List<label> labels)
+        public async Task<BookLabelModifyResult> DeleteBookLabelsAsync(book b, List<label> labels)
         {
-            var bkares = new BookLabelAddResult()
+            var bkares = new BookLabelModifyResult()
             {
                 isSuccess = false,
                 errorlist = new List<string>()
