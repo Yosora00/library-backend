@@ -11,7 +11,7 @@ namespace library_backend.Entities
         public string isbn { get; set; }
         public string press { get; set; }
         public string author { get; set; }
-        public int number { get; set; }
+        public int? number { get; set; }
         public string image { get; set; }
         public string ebook { get; set; }
     }
