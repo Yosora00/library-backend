@@ -96,7 +96,6 @@ namespace library_backend.Services
                 {
                     var bl = new booklabel
                     {
-                        id = MyUtils.generateId(),
                         bookId = b.id,
                         labelId = id
                     };
