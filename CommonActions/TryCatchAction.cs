@@ -35,36 +35,5 @@ namespace library_backend.CommonActions
             }
             return r;
         }
-
-        public static async Task<T> ExcuteAsync(
-            Func<Task> act,
-            Func<Exception, Task> err = null,
-            Func<Task> final = null
-            )
-        {
-            var r = new T();
-            try
-            {
-                await act();
-                r.isSuccess = true;
-            }
-            catch (Exception e)
-            {
-                r.isSuccess = false;
-                r.message = e.Message;
-                if (err != null)
-                {
-                    await err(e);
-                }
-            }
-            finally
-            {
-                if (final != null)
-                {
-                    await final();
-                }
-            }
-            return r;
-        }
     }
 }

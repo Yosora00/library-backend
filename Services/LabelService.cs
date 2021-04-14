@@ -14,33 +14,33 @@ namespace library_backend.Services
         {
             this.ctx = context;
         }
-        public async Task<ResultBase> AddLabelAsync(label l)
+        public ResultBase AddLabel(label l)
         {
-            return await TryCatchAction<ResultBase>.ExcuteAsync(async () =>
+            return TryCatchAction<ResultBase>.Excute(() =>
             {
-                await this.ctx.Db.Insertable<label>(l).ExecuteCommandAsync();
+                this.ctx.Db.Insertable<label>(l).ExecuteCommand();
             });
         }
 
-        public async Task<ResultBase> DeleteLabelAsync(label l)
+        public ResultBase DeleteLabel(label l)
         {
-            return await TryCatchAction<ResultBase>.ExcuteAsync(async () =>
+            return TryCatchAction<ResultBase>.Excute(() =>
             {
-                await this.ctx.Db.Deleteable<label>().In<string>(l.id).ExecuteCommandAsync();
+                this.ctx.Db.Deleteable<label>().In<string>(l.id).ExecuteCommand();
             });
         }
 
-        public async Task<ResultBase> UpdateLabelAsync(label l)
+        public ResultBase UpdateLabel(label l)
         {
-            return await TryCatchAction<ResultBase>.ExcuteAsync(async () =>
+            return TryCatchAction<ResultBase>.Excute(() =>
             {
-                await this.ctx.Db.Updateable<label>(l).ExecuteCommandAsync();
+                this.ctx.Db.Updateable<label>(l).ExecuteCommand();
             });
         }
 
-        public async Task<string> GetLabelIdAsync(string name)
+        public string GetLabelId(string name)
         {
-            var list = await this.ctx.Db.Queryable<label>().Where(l => l.name == name).ToListAsync();
+            var list = this.ctx.Db.Queryable<label>().Where(l => l.name == name).ToList();
             if (list.Count >= 1)
                 return list[0].id;
             return null;

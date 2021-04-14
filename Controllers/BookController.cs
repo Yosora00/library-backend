@@ -25,10 +25,10 @@ namespace library_backend.Controllers
         /// <param name="b"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<ResultBase> Add(book b)
+        public ResultBase Add(book b)
         {
             b.id = MyUtils.generateId();
-            return await this._bookservice.AddBookAsync(b);
+            return this._bookservice.AddBook(b);
         }
 
         /// <summary>
@@ -37,13 +37,13 @@ namespace library_backend.Controllers
         /// <param name="bookid"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<ResultBase> Delete(string bookid)
+        public ResultBase Delete(string bookid)
         {
             var b = new book
             {
                 id = bookid
             };
-            return await this._bookservice.DeleteBookAsync(b);
+            return this._bookservice.DeleteBook(b);
         }
 
         /// <summary>
@@ -52,9 +52,9 @@ namespace library_backend.Controllers
         /// <param name="b"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<ResultBase> Update(book b)
+        public ResultBase Update(book b)
         {
-            return await this._bookservice.UpdateBookAsync(b);
+            return this._bookservice.UpdateBook(b);
         }
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace library_backend.Controllers
         /// <param name="name"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<BookSearchResult> Search(string name)
+        public BookSearchResult Search(string name)
         {
-            return await this._bookservice.SearchBookAsync(name);
+            return this._bookservice.SearchBook(name);
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace library_backend.Controllers
         /// <param name="labelnames"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<BookLabelModifyResult> AddLabels(
+        public BookLabelModifyResult AddLabels(
             string bookid,
             List<string> labelnames
             )
@@ -92,7 +92,7 @@ namespace library_backend.Controllers
                     name = n
                 });
             });
-            return await this._bookservice.AddBookLabelsAsync(b, labels);
+            return this._bookservice.AddBookLabels(b, labels);
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace library_backend.Controllers
         /// <param name="labelids"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<BookLabelModifyResult> DeleteLabels(
+        public BookLabelModifyResult DeleteLabels(
             string bookid,
             List<string> labelids
             )
@@ -119,7 +119,7 @@ namespace library_backend.Controllers
                     id = n
                 });
             });
-            return await this._bookservice.DeleteBookLabelsAsync(b, labels);
+            return this._bookservice.DeleteBookLabels(b, labels);
         }
 
     }

@@ -6,9 +6,9 @@ namespace library_backend.Services
 {
     public interface ILabelService
     {
-        public Task<ResultBase> AddLabelAsync(label l);
-        public Task<ResultBase> DeleteLabelAsync(label l);
-        public Task<ResultBase> UpdateLabelAsync(label l);
-        public Task<string> GetLabelIdAsync(string name);
+        public ResultBase AddLabel(label l);
+        public ResultBase DeleteLabel(label l);
+        public ResultBase UpdateLabel(label l);
+        public string GetLabelId(string name);
     }
 }

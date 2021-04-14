@@ -21,44 +21,44 @@ namespace library_backend.Services
             this.ctx = context;
             this._labelservice = labelservice;
         }
-        public async Task<ResultBase> AddBookAsync(book b)
+        public ResultBase AddBook(book b)
         {
-            return await TryCatchAction<ResultBase>.ExcuteAsync(async () =>
+            return TryCatchAction<ResultBase>.Excute(() =>
             {
-                await this.ctx.Db.Insertable<book>(b).ExecuteCommandAsync();
+                this.ctx.Db.Insertable<book>(b).ExecuteCommand();
             });
         }
 
-        public async Task<ResultBase> DeleteBookAsync(book b)
+        public ResultBase DeleteBook(book b)
         {
-            return await TryCatchAction<ResultBase>.ExcuteAsync(async () =>
+            return TryCatchAction<ResultBase>.Excute(() =>
             {
-                await this.ctx.Db.Deleteable<book>().In<string>(b.id).ExecuteCommandAsync();
+                this.ctx.Db.Deleteable<book>().In<string>(b.id).ExecuteCommand();
             });
         }
 
-        public async Task<ResultBase> UpdateBookAsync(book b)
+        public ResultBase UpdateBook(book b)
         {
-            return await TryCatchAction<ResultBase>.ExcuteAsync(async () =>
+            return TryCatchAction<ResultBase>.Excute(() =>
             {
-                await this.ctx.Db.Updateable<book>(b).ExecuteCommandAsync();
+                this.ctx.Db.Updateable<book>(b).ExecuteCommand();
             });
         }
 
-        public async Task<BookSearchResult> SearchBookAsync(string name)
+        public BookSearchResult SearchBook(string name)
         {
             List<book> books = null;
-            var res = await TryCatchAction<BookSearchResult>.ExcuteAsync(async () =>
+            var res = TryCatchAction<BookSearchResult>.Excute(() =>
             {
-                books = await this.ctx.Db.Queryable<book>()
-                                        .Where(b => b.name.Contains(name))
-                                        .ToListAsync();
+                books = this.ctx.Db.Queryable<book>()
+                                            .Where(b => b.name.Contains(name))
+                                            .ToList();
             }) as BookSearchResult;
             res.books = books;
             return res;
         }
 
-        public async Task<BookLabelModifyResult> AddBookLabelsAsync(book b, List<label> labels)
+        public BookLabelModifyResult AddBookLabels(book b, List<label> labels)
         {
             var bkares = new BookLabelModifyResult()
             {
@@ -67,7 +67,7 @@ namespace library_backend.Services
             };
 
             //检查书是否存在
-            var bk = await this.ctx.Db.Queryable<book>().Where(e => e.id == b.id).ToListAsync();
+            var bk = this.ctx.Db.Queryable<book>().Where(e => e.id == b.id).ToList();
             if (bk.Count == 0)
             {
                 return bkares;
@@ -75,16 +75,16 @@ namespace library_backend.Services
 
             foreach (var l in labels)
             {
-                var id = await this._labelservice.GetLabelIdAsync(l.name);
+                var id = this._labelservice.GetLabelId(l.name);
                 if (id == null)
                 {
                     id = MyUtils.generateId();
                     l.id = id;
-                    var res = await _labelservice.AddLabelAsync(l);
+                    var res = _labelservice.AddLabel(l);
                 }
                 else
                 {
-                    var bl = await this.ctx.Db.Queryable<booklabel>().Where(bl => bl.bookId == b.id && bl.labelId == id).ToListAsync();
+                    var bl = this.ctx.Db.Queryable<booklabel>().Where(bl => bl.bookId == b.id && bl.labelId == id).ToList();
                     if (bl.Count > 0)
                     {
                         bkares.errorlist.Add(l.name);
@@ -99,9 +99,9 @@ namespace library_backend.Services
                         bookId = b.id,
                         labelId = id
                     };
-                    var res = await TryCatchAction<ResultBase>.ExcuteAsync(async () =>
+                    var res = TryCatchAction<ResultBase>.Excute(() =>
                     {
-                        await this.ctx.Db.Insertable<booklabel>(bl).ExecuteCommandAsync();
+                        this.ctx.Db.Insertable<booklabel>(bl).ExecuteCommand();
                     });
                     if (!res.isSuccess)
                         bkares.errorlist.Add(l.name);
@@ -112,7 +112,7 @@ namespace library_backend.Services
             return bkares;
         }
 
-        public async Task<BookLabelModifyResult> DeleteBookLabelsAsync(book b, List<label> labels)
+        public BookLabelModifyResult DeleteBookLabels(book b, List<label> labels)
         {
             var bkares = new BookLabelModifyResult()
             {
@@ -121,7 +121,7 @@ namespace library_backend.Services
             };
 
             //检查书是否存在
-            var bk = await this.ctx.Db.Queryable<book>().Where(e => e.id == b.id).ToListAsync();
+            var bk = this.ctx.Db.Queryable<book>().Where(e => e.id == b.id).ToList();
             if (bk.Count == 0)
             {
                 return bkares;
@@ -129,9 +129,9 @@ namespace library_backend.Services
 
             foreach (var l in labels)
             {
-                var res = await TryCatchAction<ResultBase>.ExcuteAsync(async () =>
+                var res = TryCatchAction<ResultBase>.Excute(() =>
                 {
-                    await this.ctx.Db.Deleteable<booklabel>().Where(bl => bl.bookId == b.id && bl.labelId == l.id).ExecuteCommandAsync();
+                    this.ctx.Db.Deleteable<booklabel>().Where(bl => bl.bookId == b.id && bl.labelId == l.id).ExecuteCommand();
                 });
                 if (!res.isSuccess)
                     bkares.errorlist.Add(l.name);
