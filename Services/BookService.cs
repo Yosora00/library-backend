@@ -78,7 +78,7 @@ namespace library_backend.Services
                 var id = this._labelservice.GetLabelId(l.name);
                 if (id == null)
                 {
-                    id = MyUtils.generateId();
+                    id = MyUtils.GenerateId();
                     l.id = id;
                     var res = _labelservice.AddLabel(l);
                 }

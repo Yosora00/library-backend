@@ -27,7 +27,7 @@ namespace library_backend.Controllers
         [HttpPost]
         public ResultBase Add(book b)
         {
-            b.id = MyUtils.generateId();
+            b.id = MyUtils.GenerateId();
             return this._bookservice.AddBook(b);
         }
 
