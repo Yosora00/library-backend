@@ -25,7 +25,7 @@ namespace library_backend.Controllers
         /// <param name="b"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<ResultBase> Add([FromForm] book b)
+        public async Task<ResultBase> Add(book b)
         {
             b.id = MyUtils.generateId();
             return await this._bookservice.AddBookAsync(b);
@@ -37,7 +37,7 @@ namespace library_backend.Controllers
         /// <param name="bookid"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<ResultBase> Delete([FromForm] string bookid)
+        public async Task<ResultBase> Delete(string bookid)
         {
             var b = new book
             {
@@ -52,7 +52,7 @@ namespace library_backend.Controllers
         /// <param name="b"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<ResultBase> Update([FromForm] book b)
+        public async Task<ResultBase> Update(book b)
         {
             return await this._bookservice.UpdateBookAsync(b);
         }
@@ -63,7 +63,7 @@ namespace library_backend.Controllers
         /// <param name="name"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<BookSearchResult> Search([FromForm] string name)
+        public async Task<BookSearchResult> Search(string name)
         {
             return await this._bookservice.SearchBookAsync(name);
         }
@@ -76,8 +76,8 @@ namespace library_backend.Controllers
         /// <returns></returns>
         [HttpPost]
         public async Task<BookLabelModifyResult> AddLabels(
-            [FromForm] string bookid,
-            [FromForm] List<string> labelnames
+            string bookid,
+            List<string> labelnames
             )
         {
             var labels = new List<label>();
@@ -103,8 +103,8 @@ namespace library_backend.Controllers
         /// <returns></returns>
         [HttpPost]
         public async Task<BookLabelModifyResult> DeleteLabels(
-            [FromForm] string bookid,
-            [FromForm] List<string> labelids
+            string bookid,
+            List<string> labelids
             )
         {
             var labels = new List<label>();
