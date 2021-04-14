@@ -17,4 +17,10 @@
     <PackageReference Include="sqlSugarCore" Version="5.0.2.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="data/data.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
