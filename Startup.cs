@@ -53,6 +53,7 @@ namespace library_backend
             services.AddSingleton<DbContext>();
             services.AddSingleton<IBookService, BookService>();
             services.AddSingleton<ILabelService, LabelService>();
+            services.AddSingleton<IUserService, UserService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
