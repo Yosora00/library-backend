@@ -28,18 +28,6 @@ namespace library_backend
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options =>
-                    {
-                        options.AddDefaultPolicy(
-                            builder =>
-                            {
-                                builder
-                                    .AllowAnyOrigin()
-                                    .AllowAnyHeader()
-                                    .AllowAnyMethod();
-                            });
-                    });
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -68,8 +56,6 @@ namespace library_backend
             // app.UseHttpsRedirection();
 
             app.UseRouting();
-
-            app.UseCors();
 
             app.UseAuthorization();
 
