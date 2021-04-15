@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using library_backend.Services;
 using library_backend.DataBase;
+using Microsoft.AspNetCore.Http;
 
 namespace library_backend
 {
@@ -46,6 +47,7 @@ namespace library_backend
                 c.IncludeXmlComments(xmlPath);
             });
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<DbContext>();
             services.AddSingleton<IBookService, BookService>();
             services.AddSingleton<ILabelService, LabelService>();
