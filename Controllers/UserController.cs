@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace library_backend.Controllers
 {
     [ApiController]
-    [Route("[controller]/[action]")]
+    [Route("Api/[controller]/[action]")]
     public class UserController : ControllerBase
     {
         private IUserService _userservice;

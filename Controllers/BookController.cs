@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace library_backend.Controllers
 {
     [ApiController]
-    [Route("[controller]/[action]")]
+    [Route("Api/[controller]/[action]")]
     public class BookController : ControllerBase
     {
         private IBookService _bookservice;
