@@ -28,6 +28,14 @@ namespace library_backend
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDistributedMemoryCache();
+            services.AddSession(option =>
+            {
+                option.IdleTimeout = TimeSpan.FromDays(365);
+                option.Cookie.IsEssential = true;
+                option.Cookie.HttpOnly = true;
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -58,6 +66,8 @@ namespace library_backend
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
