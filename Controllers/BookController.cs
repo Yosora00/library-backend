@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using library_backend.Attributes;
 using library_backend.Entities;
 using library_backend.Results;
 using library_backend.Services;
@@ -24,6 +25,7 @@ namespace library_backend.Controllers
         /// </summary>
         /// <param name="b"></param>
         /// <returns></returns>
+        [AdminAuthorize]
         [HttpPost]
         public ResultBase Add(book b)
         {
@@ -36,6 +38,7 @@ namespace library_backend.Controllers
         /// </summary>
         /// <param name="bookid"></param>
         /// <returns></returns>
+        [AdminAuthorize]
         [HttpPost]
         public ResultBase Delete(string bookid)
         {
@@ -51,6 +54,7 @@ namespace library_backend.Controllers
         /// </summary>
         /// <param name="b"></param>
         /// <returns></returns>
+        [AdminAuthorize]
         [HttpPost]
         public ResultBase Update(book b)
         {
@@ -62,6 +66,7 @@ namespace library_backend.Controllers
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
+        [UserAuthorize]
         [HttpPost]
         public BookSearchResult Search(string name)
         {
@@ -74,6 +79,7 @@ namespace library_backend.Controllers
         /// <param name="bookid"></param>
         /// <param name="labelnames"></param>
         /// <returns></returns>
+        [AdminAuthorize]
         [HttpPost]
         public BookLabelModifyResult AddLabels(
             string bookid,
@@ -101,6 +107,7 @@ namespace library_backend.Controllers
         /// <param name="bookid"></param>
         /// <param name="labelids"></param>
         /// <returns></returns>
+        [AdminAuthorize]
         [HttpPost]
         public BookLabelModifyResult DeleteLabels(
             string bookid,

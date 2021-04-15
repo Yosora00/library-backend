@@ -4,6 +4,7 @@ using library_backend.Results;
 using library_backend.Services;
 using library_backend.utils;
 using Microsoft.AspNetCore.Mvc;
+using library_backend.Attributes;
 
 namespace library_backend.Controllers
 {
@@ -50,6 +51,7 @@ namespace library_backend.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [AdminAuthorize]
         [HttpPost]
         public ResultBase Delete(string id)
         {
@@ -61,6 +63,7 @@ namespace library_backend.Controllers
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
+        [UserAuthorize]
         [HttpPost]
         public ResultBase Update(user user)
         {
